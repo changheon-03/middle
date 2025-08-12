@@ -28,7 +28,8 @@
   text-decoration: none;
 }
 .logo a:hover {
-  color: var(--color-primary);
+  color: #007bff;
+;
 }
 
 .nav {
@@ -55,7 +56,8 @@
   transition: color 0.2s ease-in-out;
 }
 .nav-title:hover {
-  color: var(--color-primary);
+  color: #007bff;
+;
 }
 
 .dropdown-column {
@@ -82,7 +84,8 @@
   transition: color 0.2s ease-in-out;
 }
 .dropdown-link:hover {
-  color: var(--color-primary);
+  color: #007bff;
+
 }
 
 .header-icons {
