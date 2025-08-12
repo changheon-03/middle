@@ -31,8 +31,11 @@ const Intro = () => {
       </section>
 
       {/* 문제 제기 섹션 */}
-      <section className="problem">
+      <section className="sub-section">
+        <div className='section-header'>
         <h2>왜 라벨 검사가 중요한가?</h2>
+
+        </div>
         <ul className="problem-list">
           <li>
             라벨 오류 환자 피해 연간 3,000건 이상
@@ -74,46 +77,51 @@ const Intro = () => {
       </section>
 
       {/* 솔루션 개요 섹션 */}
-      <section className="solution">
+      <section className="sub-section">
+        <div className='section-header'>
+
         <h2>우리의 접근 방법</h2>
+        </div>
         <div className="flow">
           <div className="flow-step">
-            <FiCamera size={32} color={DISABLED_ICON_COLOR} />
+            <FiCamera size={90} color={DISABLED_ICON_COLOR} />
             <p>이미지 업로드</p>
           </div>
           <div className="flow-step">
-            <FiCpu size={32} color={DISABLED_ICON_COLOR} />
+            <FiCpu size={90} color={DISABLED_ICON_COLOR} />
             <p>OCR & YOLO 분석</p>
           </div>
           <div className="flow-step">
             {/* 세 번째 아이콘만 회색으로 표시 */}
-            <FiCheckCircle size={32} color={DISABLED_ICON_COLOR} />
+            <FiCheckCircle size={90} color={DISABLED_ICON_COLOR} />
             <p>불량 판별 & 리포트 제공</p>
           </div>
         </div>
       </section>
 
       {/* 핵심 기능 섹션 */}
-      <section className="features">
+      <section className="sub-section dark-bg">
+        <div className="section-header">
         <h2>핵심 기능</h2>
+        </div>
         <div className="feature-grid">
           <div className="feature-card">
-            <FiFileText size={24} color={ICON_COLOR} />
+            <FiFileText size={90} color={ICON_COLOR} />
             <h3>다양한 형식 지원</h3>
             <p>PDF·이미지·실시간 카메라 피드 대응</p>
           </div>
           <div className="feature-card">
-            <FiTag size={24} color={ICON_COLOR} />
+            <FiTag size={90} color={ICON_COLOR} />
             <h3>불량 유형 자동 분류</h3>
             <p>누락·흐림·오염 등 5가지 이상 분류</p>
           </div>
           <div className="feature-card">
-            <FiRefreshCw size={24} color={ICON_COLOR} />
+            <FiRefreshCw size={90} color={ICON_COLOR} />
             <h3>배치 처리 기능</h3>
             <p>한 번에 최대 1000개 검사 지원</p>
           </div>
           <div className="feature-card">
-            <FiDownload size={24} color={ICON_COLOR} />
+            <FiDownload size={90} color={ICON_COLOR} />
             <h3>리포트 다운로드</h3>
             <p>PDF·CSV 리포트 자동 생성·다운로드</p>
           </div>
@@ -121,8 +129,11 @@ const Intro = () => {
       </section>
 
       {/* 결과 예시 섹션 */}
-      <section className="sample-output">
+      <section className="sub-section">
+        <div className='section-header'>
+
         <h2>결과 예시</h2>
+        </div>
         <div className="sample-images">
           <img src={Rabel} alt="YOLO 박스가 그려진 라벨 사진" />
           <img src={Rabel2} alt="추출된 OCR 텍스트 예시" />

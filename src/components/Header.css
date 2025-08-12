@@ -1,130 +1,151 @@
-/* 헤더 래퍼 */
-.new-header-wrapper {
-  position: relative;
+/* Header.css */
+
+.header-wrapper {
+  width: 100%;
+  background: var(--color-background);
+  box-shadow: var(--shadow-header);
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  background-color: white;
 }
 
-/* ===== CSS GRID 기반 완벽 정렬 시스템 ===== */
-
-/* 헤더 컨테이너 - CSS Grid 사용 */
-.new-header-container {
-  max-width: 1800px;
-  margin: 0 auto;
+.header-container {
+  width: 100%;
   display: grid;
-  grid-template-columns: 500px 1fr 500px; /* 로고영역 | 메뉴영역 | 아이콘영역 */
+  grid-template-columns: 150px 1fr 150px;
   align-items: center;
-  padding: 0.7rem 2rem;
-  background-color: white;
+  padding: 0 2rem;
+  height: var(--header-height-desktop);
+  box-sizing: border-box;
   position: relative;
-  z-index: 1001;
+  z-index: 2;
 }
 
-/* 로고 */
-.new-logo {
-  justify-self: start;
-}
-
-.new-logo a {
-  font-size: 1.8rem;
+.logo a {
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-text-dark);
   text-decoration: none;
 }
-
-.new-logo a:hover {
-  color: #007bff;
+.logo a:hover {
+  color: var(--color-primary);
 }
 
-/* 네비게이션 - 중앙 정렬 */
-.new-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3개 메뉴 균등 분할 */
-  text-align: center;
-  justify-self: center;
-  width: 100%;
-}
-
-.new-nav-item {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-  cursor: pointer;
-  padding: 0.5rem 0;
-}
-
-.new-nav-item:hover {
-  color: #007bff;
-}
-
-/* 헤더 아이콘들 */
-.new-header-icons {
+.nav {
   display: flex;
-  gap: 1rem;
-  justify-self: end;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 100%;
 }
 
-.new-icon {
-  font-size: 1.2rem;
-  color: #333;
+.nav-item {
+  position: relative;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.07rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
   cursor: pointer;
-  padding: 0.5rem;
+  transition: color 0.2s ease-in-out;
+}
+.nav-title:hover {
+  color: var(--color-primary);
 }
 
-.new-icon:hover {
-  background: #e9ecef;
-}
-
-/* 메가 메뉴 - 헤더와 동일한 CSS Grid 구조 */
-.new-mega-menu {
+.dropdown-column {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border-top: 1px solid #eee;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.new-mega-container {
-  /* 헤더와 정확히 동일한 CSS Grid 구조 */
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 200px 1fr 200px; /* 헤더와 동일한 그리드 */
-  align-items: start;
-  padding: 2rem 2rem;
-  position: relative;
-}
-
-/* 메가 메뉴 콘텐츠 - 헤더 nav와 동일한 구조 */
-.new-mega-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 헤더 nav와 동일한 3분할 */
-  text-align: center;
-  justify-self: center;
-  width: 100%;
-  gap: 1rem;
-}
-
-.new-mega-column {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.new-mega-link {
-  color: #666;
+.dropdown-link {
+  color: var(--color-text-light);
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500; /* 헤더와 동일한 무게로 균형 맞춤 */
-  padding: 0.3rem 0;
-  text-align: center;
+  font-size: 0.98rem;
+  white-space: nowrap;
+  transition: color 0.2s ease-in-out;
+}
+.dropdown-link:hover {
+  color: var(--color-primary);
 }
 
-.new-mega-link:hover {
-  color: #007bff;
-  text-decoration: underline;
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  justify-content: flex-end;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--color-text-base);
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: background-color 0.15s ease-in-out;
+}
+.icon-button:hover {
+  background-color: var(--color-background-hover);
+}
+
+.mega-menu-background {
+  position: absolute;
+  top: var(--header-height-desktop);
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--shadow-dropdown);
+  z-index: 1;
+  padding-bottom: 123px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition-default);
+}
+
+.mega-menu-background.visible,
+.dropdown-column.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mega-menu-background.visible {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: var(--header-height-mobile);
+  }
+  .nav {
+    display: none;
+  }
+  .mega-menu-background {
+     top: var(--header-height-mobile);
+  }
 }

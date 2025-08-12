@@ -6,6 +6,8 @@ import QuestionForm from './components/QuestionForm';
 import Trial from './components/Trial'; // 체험 페이지 추가
 import Intro from './components/Intro';
 import Hi from './components/Hi'; // Hi 컴포넌트 추가
+import Faq from './components/Faq'; // Faq 컴포넌트 추가
+import Promo from './components/Promo'; // 프로모션 컴포넌트 추가
 import './App.css';
 
 function App() {
@@ -52,6 +54,10 @@ function App() {
         return <Intro navigate={navigate} />;
       case 'hi': // Hi 컴포넌트 추가
         return <Hi navigate={navigate} />;
+      case 'faq':
+        return <Faq navigate={navigate} />; // Faq 컴포넌트 추가
+      case 'promo':
+        return <Promo navigate={navigate} />; // 프로모션 컴포넌트 추가
       default:
         return <Home />;
     }

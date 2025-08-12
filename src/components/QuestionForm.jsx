@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './QuestionForm.css';
 
-const QuestionForm = ({ onClose, onSubmit }) => {
+const QuestionForm = ({onSubmit }) => {
   const [formData, setFormData] = useState({
     inquiryType: '환불',
     title: '',
@@ -33,13 +33,6 @@ const handleSubmit = (e) => {
   // 필수값 체크
   if (!formData.title.trim() || !formData.content.trim() || !formData.contact.trim()) {
     alert('제목, 내용, 이메일은 필수 입력사항입니다.');
-    return;
-  }
-
-  // 이메일 형식 체크 (간단한 정규식)
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(formData.contact)) {
-    alert('올바른 이메일 주소를 입력해주세요.');
     return;
   }
 
@@ -139,25 +132,8 @@ const handleSubmit = (e) => {
             </div>
           </div>
 
-          {/* 연락처 */}
-<div className="form-group">
-  <label htmlFor="email">이메일 *</label>
-  <input
-    type="email"
-    id="email"
-    name="contact"           // 기존 contact 그대로 두면 formData에서 별도 수정 없이 사용 가능
-    value={formData.contact}
-    onChange={handleInputChange}
-    placeholder="답변 받을 이메일 주소"
-    required
-  />
-</div>
-
           {/* 버튼 */}
           <div className="form-buttons full-width">
-            <button type="button" className="cancel-button" onClick={onClose}>
-              취소
-            </button>
             <button type="submit" className="submit-button">
               문의하기
             </button>

@@ -10,7 +10,7 @@ body {
 
 /* 전체 페이지 컨테이너 */
 .trial-page {
-  height: 878px;
+  height: calc(100vh - var(--header-height-desktop));
   width: 100;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ body {
 /* 좌우 패널 공통 스타일 */
 .panel {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #F8F9FA;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -94,7 +94,7 @@ body {
 
 /* 보조 버튼 */
 .btn-secondary {
-  background-color: #f1f3f5;
+  background-color: #edeeef;
   color: #333;
   border: 1px solid #ccc;
 }
@@ -194,10 +194,4 @@ body {
 .result-box .ocr-text span {
   white-space: pre-wrap;
   line-height: 1.6;
-}
-
-/* 홈 버튼 */
-.home-button {
-  margin-top: 40px;
-  max-width: 300px;
 }

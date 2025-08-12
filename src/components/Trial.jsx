@@ -118,10 +118,6 @@ export default function Trial({ navigate }) {
           )}
         </div>
       </div>
-
-      <button onClick={() => navigate("home")} className="btn btn-secondary home-button">
-        홈으로 돌아가기
-      </button>
     </div>
   );
 }
