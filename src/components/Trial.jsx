@@ -60,7 +60,10 @@ export default function Trial({ navigate }) {
 
   return (
     <div className="trial-page">
-      <h1 className="page-title">라벨 불량 판정</h1>
+      <div className="trial-hero">
+      <h1 className="hero-title">라벨의 불량을 판정해 드립니다</h1>
+      <p className="hero-subtitle">원하는 사진을 넣어보세요.</p>
+      </div>
 
       <div className="main-content">
         {/* 좌측 패널: 입력 */}

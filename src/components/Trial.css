@@ -10,28 +10,23 @@ body {
 
 /* 전체 페이지 컨테이너 */
 .trial-page {
-  height: calc(100vh - var(--header-height-desktop));
-  width: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 100px;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Pretendard', sans-serif;
+  background-color: white;
 }
 
 /* 페이지 타이틀 */
-.page-title {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #333; /* 강조 색상만 파란색 */
-  margin-bottom: 40px;
+.trial-hero {
+  position: relative;
+  padding: 6rem 1rem;
+  background-color: #0028A0; /* 푸른색 배경 */
+  background-size: cover;
+  color: white;
+  text-align: center;
 }
 
 /* 메인 컨텐츠 영역 */
 .main-content {
+  margin: 0 auto;
   display: flex;
   width: 100%;
   max-width: 900px;
