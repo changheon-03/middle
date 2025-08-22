@@ -11,42 +11,34 @@ body {
 /* 전체 페이지 컨테이너 */
 .trial-page {
   font-family: 'Pretendard', sans-serif;
-  background-color: white;
+  background-color: white;;
 }
 
 /* 페이지 타이틀 */
 .trial-hero {
   position: relative;
   padding: 6rem 1rem;
-  background-color: #0028A0; /* 푸른색 배경 */
+  background-image: url('../assets/Trailbanner.jpg');
   background-size: cover;
-  color: white;
+  background-position: center;
+  color: white; /* 흰색 텍스트 */
   text-align: center;
 }
 
 /* 메인 컨텐츠 영역 */
 .main-content {
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
-  max-width: 900px;
-  gap: 30px;
-}
-
-/* 좌우 패널 공통 스타일 */
-.panel {
-  flex: 1;
+  margin: 4rem auto;
+  max-width: 1000px;
   background-color: #F8F9FA;
-  padding: 40px;
+  padding: 5rem 2rem;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
+  justify-content: center;
   gap: 40px;
   transition: all 0.3s ease;
-  height: 500px;
 }
 
 .panel h2 {
@@ -55,12 +47,6 @@ body {
   margin: 0 0 15px 0;
 }
 
-/* 우측 패널 전용 스타일 */
-.output-panel {
-  align-items: center;
-}
-
-/* 버튼 공통 */
 .btn {
   padding: 16px 32px;
   font-size: 1.1rem;
@@ -75,7 +61,6 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* 주요 버튼 */
 .btn-primary {
   background-color: #007bff;
   color: white;
@@ -87,9 +72,8 @@ body {
   box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
 }
 
-/* 보조 버튼 */
 .btn-secondary {
-  background-color: #edeeef;
+  background-color: #f1f3f5;
   color: #333;
   border: 1px solid #ccc;
 }
@@ -107,86 +91,72 @@ body {
   box-shadow: none;
 }
 
-/* 파일 업로드 input 숨김 */
 .file-input {
   display: none;
 }
 
-/* 결과 표시 */
-.output-placeholder {
+.output-placeholder, .loading-text {
   font-size: 1.5rem;
   color: #aaa;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loading-text {
+  color: #333;
 }
 
 .image-preview {
   max-width: 100%;
-  max-height: 450px;
+  max-height: 400px; /* 최대 높이 조정 */
   border-radius: 10px;
-  border: 2px dashed #007bff;
+  object-fit: contain; /* 이미지 비율 유지 */
 }
 
-/* 로딩 텍스트 */
-.loading-text {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #333;
-}
-
-/* 결과 박스 */
-.result-box {
+.result-table {
   width: 100%;
-  padding: 30px;
-  border-radius: 10px;
-  border: 2px solid;
-  box-sizing: border-box;
-  background-color: #fff;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
-.result-box.normal {
-  background-color: #e6f4ff;
-  border-color: #007bff;
+.result-table th, .result-table td {
+  border: 1px solid #ddd;
+  padding: 12px 8px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
-.result-box.defective {
-  background-color: #fff0f0;
-  border-color: #ff4d4f;
+.result-table th {
+  background-color: #f8f9fa;
+  font-weight: 700;
 }
 
-.result-box .result-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-  color: #333;
+.cropped-image {
+  max-height: 40px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
 }
 
-.result-box.normal .result-title {
-  color: #007bff;
+/* Added from inline styles */
+.analyzed-image {
+    border: 2px solid #0028A0;
+    display: block;
+    margin: 0 auto;
 }
 
-.result-box.defective .result-title {
-  color: #ff4d4f;
+.details-header {
+    margin-top: 30px;
 }
 
-.result-box .result-title span {
-  font-size: 2rem;
-}
-
-.result-box hr {
-  margin: 20px 0;
-  border: 0;
-  border-top: 1px solid #eee;
-}
-
-.result-box .ocr-text {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #333;
-  margin: 0;
-  text-align: left;
-}
-
-.result-box .ocr-text span {
-  white-space: pre-wrap;
-  line-height: 1.6;
+.trial-result-content {
+  display: flex; /* Flexbox 레이아웃 사용 */
+  flex-direction: column; /* 아이템을 세로로 쌓음 */
+  align-items: center; /* 아이템들을 가로축 중앙에 정렬 */
+  width: 100%; /* 부모 요소의 전체 너비를 차지 */
 }
